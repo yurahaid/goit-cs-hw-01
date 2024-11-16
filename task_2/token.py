@@ -3,6 +3,10 @@ class TokenType:
     PLUS = "PLUS"
     MINUS = "MINUS"
     EOF = "EOF"  # Означає кінець вхідного рядка
+    MUL = "MUL"
+    DIV = "DIV"
+    LPAREN = "LPAREN"
+    RPAREN = "RPAREN"
 
 
 class Token:

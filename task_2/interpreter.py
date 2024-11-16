@@ -1,5 +1,5 @@
 from task_2.lexer import Lexer
-from task_2.parser import Parser
+from task_2.parser import Parser, print_ast
 from task_2.token import TokenType
 
 class Interpreter:
@@ -11,6 +11,10 @@ class Interpreter:
             return self.visit(node.left) + self.visit(node.right)
         elif node.op.type == TokenType.MINUS:
             return self.visit(node.left) - self.visit(node.right)
+        elif node.op.type == TokenType.MUL:
+            return self.visit(node.left) * self.visit(node.right)
+        elif node.op.type == TokenType.DIV:
+            return self.visit(node.left) / self.visit(node.right)
 
     def visit_Num(self, node):
         return node.value
